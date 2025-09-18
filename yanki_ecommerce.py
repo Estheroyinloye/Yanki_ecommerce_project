@@ -23,7 +23,7 @@ print(yanki_df.info ())
 new_yanki_df = yanki_df.assign(Revenue = yanki_df['Quantity'] * yanki_df['Price'])
 print(new_yanki_df.info())
 
-#### Normalising the data after cleaning
+#### Normalising the data after cleaning.. normalising should be done before cleaning
 
 ## Product df
 ## Customer_df
