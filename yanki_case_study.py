@@ -52,12 +52,12 @@ def create_tables():
     connect = get_db_connection()
     cursor = connect.cursor()
     create_table_SQL_query = '''
-                                CREATE SCHEMA IF NOT EXISTS yanki
-                                DROP TABLE IF EXISTS yanki.customers CASCADE
-                                DROP TABLE IF EXISTS yanki.products CASCADE
-                                DROP TABLE IF EXISTS yanki.shipping CASCADE
-                                DROP TABLE IF EXISTS yanki.orders CASCADE
-                                DROP TABLE IF EXISTS yanki.payment_method CASCADE
+                                CREATE SCHEMA IF NOT EXISTS yanki;
+                                DROP TABLE IF EXISTS yanki.customers CASCADE;
+                                DROP TABLE IF EXISTS yanki.products CASCADE;
+                                DROP TABLE IF EXISTS yanki.shipping CASCADE;
+                                DROP TABLE IF EXISTS yanki.orders CASCADE;
+                                DROP TABLE IF EXISTS yanki.payment_method CASCADE;
 
 
                                 CREATE TABLE IF NOT EXISTS yanki.customers (
@@ -91,7 +91,7 @@ def create_tables():
                                 );
                                 
 
-                                   CREATE TABLE IF NOT EXISTS yanki.orders (
+                                CREATE TABLE IF NOT EXISTS yanki.orders (
                                     Order_ID UUID PRIMARY KEY,
                                     Customer_ID UUID,
                                     Product_ID UUID,
@@ -106,10 +106,10 @@ def create_tables():
                                 
 
 
-                                    CREATE TABLE IF NOT EXISTS yanki.payment_method (
+                                CREATE TABLE IF NOT EXISTS yanki.payment_method (
                                     Order_ID UUID,
-                                    Payment_method TEXT
-                                    Transaction_Status TEXT
+                                    Payment_method TEXT,
+                                    Transaction_Status TEXT,
                                     FOREIGN KEY (Order_ID) REFERENCES yanki.orders(Order_ID)
                                     );'''
 
